@@ -1,0 +1,35 @@
+# Runtime configuration for the Driver Drowsiness Detection System.
+#
+# Precedence: CLI arguments > this file > application defaults.
+# Relative asset paths are resolved relative to this config file.
+
+camera:
+  index: 0
+  width: 512
+  height: 512
+  processing_scale: 1.0
+
+detection:
+  ear_threshold: 0.3
+  closed_frames_threshold: 30
+
+yawning:
+  enabled: true
+  mar_threshold: 0.6
+  consecutive_frames: 15
+
+head_pose:
+  enabled: true
+  roll_threshold_degrees: 20.0
+  downward_ratio_threshold: 0.65
+  consecutive_frames: 15
+
+assets:
+  model_path: shape_predictor_68_face_landmarks.dat
+  alarm_path: loud_alarm.wav
+
+alert:
+  enabled: true
+
+logging:
+  level: INFO
